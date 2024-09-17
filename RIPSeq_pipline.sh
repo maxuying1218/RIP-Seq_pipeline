@@ -8,6 +8,7 @@ out_label=$4
 ht2_index=$5
 cpu=$6
 gtf=$7
+gn=$8 ### genome name
 
 if [ ! -d ${out_dir} ]
 then
@@ -61,9 +62,9 @@ sed -i '1d' ${out_label}_peaks.bed
 sed -i 's/\t-[0-9]*\t/\t0\t/g' ${out_label}_peaks.bed
 
 ###peak annotate
-echo `date +%F": "%X`,": PeakAnnotate ${out_label}!"
+echo `date +%F": "%X`,": AnnotatePeaks ${out_label}!"
 cd ${pkan_dir}
-peakAnnotate -p ${macs_dir}/${out_label}_peaks.bed -g ${gtf} -o ${out_label}.pkan |grep -v annotation > logs/${out_label}.pkan.log
+annotatePeaks.pl ${macs_dir}/${out_label}_peaks.bed $gn 1>${out_label}.peak_anno.xlsx 2>logs/${out_label}.pkan.log
 
 
 cd ${out_dir}
