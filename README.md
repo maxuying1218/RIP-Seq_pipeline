@@ -3,6 +3,7 @@ A RIP-Seq pipeline
 
 ### Software requirement
 - hisat2
+- samtools
 - stringtie
 - htseq
 - HOMER (for peak annotation)
