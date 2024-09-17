@@ -8,7 +8,9 @@ A RIP-Seq pipeline
 - HOMER (for peak annotation)
 
 ### Usage
+```
 sh RIPSeq_pipline.sh fq_r1 fq_r2 out_dir out_label ht2_index cpu gtf
+```
 Here is an example of a figure using the results from this pipeline:  
 ![image](https://github.com/maxuying1218/RIP-Seq_pipeline/blob/main/Peak_Annotation.jpg)
 
