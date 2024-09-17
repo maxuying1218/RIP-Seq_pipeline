@@ -5,10 +5,15 @@ A RIP-Seq pipeline
 - hisat2
 - stringtie
 - htseq
-- peakAnnotate(from Weilab)
+- HOMER (for peak annotation)
 
 ### Usage
 sh RIPSeq_pipline.sh fq_r1 fq_r2 out_dir out_label ht2_index cpu gtf
+Here is an example of a figure using the results from this pipeline:  
+![image](https://github.com/maxuying1218/RIP-Seq_pipeline/blob/main/Peak_Annotation.jpg)
 
 ### Note
-peakAnnotate used in this pipeline is customized scripts by Weilab members, which can be found at [peakAnnotate](https://github.com/maxuying1218/ChIP-Seq_pipeline/blob/main/1.perl_scripts_from_Weilab/peakAnnotate).
+If your genome is not in HOMER database, you should create your own HOMER data like this:  
+```
+loadGenome.pl -gtf  genome.gtf  -name genome -fasta genome.fa  -org species_name
+```
